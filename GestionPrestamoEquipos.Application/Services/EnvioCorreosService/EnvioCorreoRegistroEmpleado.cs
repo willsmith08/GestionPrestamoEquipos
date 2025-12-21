@@ -12,7 +12,7 @@ namespace GestionPrestamoEquipos.Application.Services.EnvioCorreosService
     internal class EnvioCorreoRegistroEmpleado
     {
 
-        public async void AvisoRegistro(Empleado empleadoRecibir, Administrador adminEnviar)
+        public async void AvisoRegistro(Empleado empleadoRecibir, Administrador adminEnviar, bool confirmacion)
         {
             await Task.Run(() =>
             {
@@ -24,6 +24,7 @@ namespace GestionPrestamoEquipos.Application.Services.EnvioCorreosService
                         correo.From = new MailAddress(adminEnviar.Empleado.e_mail);
                         correo.To.Add(empleadoRecibir.e_mail);
 
+                        
 
                     }
                 }
