@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using GestionPrestamoEquipos.Application.Services.EnvioCorreosService;
+using GestionPrestamoEquipos.Application.Session;
 
 namespace GestionPrestamoEquipos.Application.Services
 {
@@ -36,7 +37,7 @@ namespace GestionPrestamoEquipos.Application.Services
 
             if (string.IsNullOrWhiteSpace(RegEmpleado.documento))
             {
-                throw new Exception("El documento es obligatori");
+                throw new Exception("El documento es obligatori"); 
             }
 
             if (!Regex.IsMatch(RegEmpleado.gmail, "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"))
@@ -86,7 +87,7 @@ namespace GestionPrestamoEquipos.Application.Services
 
             _repoEmpleado.Agregar(empleadoNuevo);
 
-            
+            CorreoRegistroEmpleadoExitosoService.Ejecutar(empleadoNuevo, UsuarioSession.empleado);
         }
 
     }

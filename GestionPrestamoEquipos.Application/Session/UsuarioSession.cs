@@ -7,16 +7,21 @@ using System.Threading.Tasks;
 
 namespace GestionPrestamoEquipos.Application.Session
 {
-    internal class UsuarioSession
+    public static class UsuarioSession
     {
-        public Empleado empleado {  get; private set; }
+        public static Empleado empleado {  get; private set; }
 
-        public void cambiarEmpleado(Empleado empleado)
+        public static void Iniciar(Empleado empleado)
         {
             if (empleado == null)
             {
                 throw new Exception("Empleado invalido");
             }
+        }
+
+        public static void Cerrar()
+        {
+            empleado = null;
         }
     }
 }
