@@ -13,7 +13,7 @@ namespace GestionPrestamoEquipos.Application.Services.EnvioCorreosService
     internal class CorreoRegistroEmpleadoExitosoService
     {
 
-        public async void Ejecutar(Empleado empleadoRecibir, Empleado adminEnviar)
+        public static async void Ejecutar(Empleado empleadoRecibir, Empleado adminEnviar)
         {
             await Task.Run(() =>
             {
