@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="Entities\Administrador.cs" />
     <Compile Include="Entities\CargoEmpleado.cs" />
     <Compile Include="Entities\Devolucion.cs" />
     <Compile Include="Entities\Empleado.cs" />
