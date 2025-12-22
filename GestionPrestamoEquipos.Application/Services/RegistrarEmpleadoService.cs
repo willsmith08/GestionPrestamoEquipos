@@ -86,7 +86,7 @@ namespace GestionPrestamoEquipos.Application.Services
 
             _repoEmpleado.Agregar(empleadoNuevo);
 
-            CorreoRegistroEmpleadoExitosoService.Ejecutar(empleadoNuevo);
+            
         }
 
     }

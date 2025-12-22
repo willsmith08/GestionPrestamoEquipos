@@ -48,8 +48,9 @@
     <Compile Include="Interfaces\ICargoEmpleadoRepository.cs" />
     <Compile Include="Interfaces\IEmpleadoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\EnvioCorreosService\EnvioCorreoRegistroEmpleado.cs" />
+    <Compile Include="Services\EnvioCorreosService\CorreoRegistroEmpleadoExitosoService.cs" />
     <Compile Include="Services\RegistrarEmpleadoService.cs" />
+    <Compile Include="Session\UsuarioSession.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
