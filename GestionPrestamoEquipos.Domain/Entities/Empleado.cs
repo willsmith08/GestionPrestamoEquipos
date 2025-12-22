@@ -9,6 +9,13 @@ namespace GestionPrestamoEquipos.Domain.Entities
 {
     public class Empleado
     {
+
+        public Empleado(int idEmpleado)
+        {
+            this.idEmpleado = idEmpleado;
+        }
+        public Empleado() { }
+
         public int idEmpleado {  get; private set; }
         public string nombreEmpleado { get; private set; }
         public int documentoEmpleado { get; private set; }

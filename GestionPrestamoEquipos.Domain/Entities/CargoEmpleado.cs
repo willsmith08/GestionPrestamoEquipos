@@ -8,6 +8,12 @@ namespace GestionPrestamoEquipos.Domain.Entities
 {
     public class CargoEmpleado
     {
+        public CargoEmpleado(int idCargoEmpleado)
+        {
+            this.idCargo = idCargoEmpleado;
+        }
+        public CargoEmpleado() { }
+
         public int idCargo { get; private set; }
         public string nombreCargo { get; private set; }
 
