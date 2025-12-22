@@ -11,7 +11,10 @@ namespace GestionPrestamoEquipos.Application.Interfaces
     internal interface IEmpleadoRepository
     {
         void Agregar(Empleado empleado);
+        void Eliminar(Empleado empleado);
+        void Editar(Empleado empleado);
         List<Empleado> ListarEmpleados();
+
         bool ExiteGmail(string gmailEmpleado);
         bool ExisteDocumento(int documento);
     }
