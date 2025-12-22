@@ -8,15 +8,17 @@ using System.Xml.Linq;
 
 namespace GestionPrestamoEquipos.Application.Interfaces
 {
-    internal interface IEmpleadoRepository
+    public interface IEmpleadoRepository
     {
         void Agregar(Empleado empleado);
         void Eliminar(Empleado empleado);
         void Actualizar(Empleado empleado);
         List<Empleado> ListarEmpleados();
+        List<Empleado> ListarEmpleadosEnMora();
 
         bool ExiteGmail(string gmailEmpleado);
         bool ExisteDocumento(int documento);
+        bool VericacionPrestamosPendientes(int idEmpleado);
 
         Empleado EmpleadoEspecifico(int idEmpleadi);
     }
