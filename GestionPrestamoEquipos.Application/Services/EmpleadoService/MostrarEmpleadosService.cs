@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionPrestamoEquipos.Application.Services.EmpleadoService
 {
-    internal class MostrarEmpleadosService
+    public class MostrarEmpleadosService
     {
     }
 }
