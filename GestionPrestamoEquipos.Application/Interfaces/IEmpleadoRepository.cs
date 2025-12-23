@@ -13,8 +13,7 @@ namespace GestionPrestamoEquipos.Application.Interfaces
         void Agregar(Empleado empleado);
         void Eliminar(Empleado empleado);
         void Actualizar(Empleado empleado);
-        List<Empleado> ListarEmpleados();
-        List<Empleado> ListarEmpleadosEnMora();
+        List<Empleado> ListarEmpleados(string busqueda);
 
         bool ExiteGmail(string gmailEmpleado);
         bool ExisteDocumento(int documento);

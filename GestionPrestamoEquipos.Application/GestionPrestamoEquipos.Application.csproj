@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="DToS\EmpleadoDToS\EditarEmpleadoDTO.cs" />
     <Compile Include="DToS\EmpleadoDToS\EliminarEmpleadoDTO.cs" />
-    <Compile Include="DToS\EmpleadoDToS\EmpleadoMoraDTO.cs" />
+    <Compile Include="DToS\EmpleadoDToS\MostrarEmpleadoDTO.cs" />
     <Compile Include="DToS\RegCargoEmpleadoDTO.cs" />
     <Compile Include="DToS\EmpleadoDToS\RegistrarEmpleadoDTO.cs" />
     <Compile Include="Interfaces\IAdministradorRepository.cs" />
@@ -52,7 +52,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\EmpleadoService\ActualizarEmpleadoService.cs" />
     <Compile Include="Services\EmpleadoService\EliminarEmpleadoService.cs" />
-    <Compile Include="Services\EmpleadoService\ListarEmpleadosMoraService.cs" />
+    <Compile Include="Services\EmpleadoService\ListarEmpleadosService.cs" />
     <Compile Include="Services\EnvioCorreosService\CorreoCodigoVerificacion.cs" />
     <Compile Include="Services\EnvioCorreosService\CorreoRegistroEmpleadoExitosoService.cs" />
     <Compile Include="Services\EmpleadoService\RegistrarEmpleadoService.cs" />
