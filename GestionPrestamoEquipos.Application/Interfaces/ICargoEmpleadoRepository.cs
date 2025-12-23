@@ -10,5 +10,7 @@ namespace GestionPrestamoEquipos.Application.Interfaces
     internal interface ICargoEmpleadoRepository
     {
         CargoEmpleado ObtnerCargoEmpleadoPorId(int idCargo);
+
+        List<CargoEmpleado> ListarCargos();
     }
 }
