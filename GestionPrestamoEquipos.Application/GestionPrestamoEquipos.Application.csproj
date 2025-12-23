@@ -46,7 +46,6 @@
     <Compile Include="DToS\EmpleadoDToS\MostrarEmpleadoDTO.cs" />
     <Compile Include="DToS\RegCargoEmpleadoDTO.cs" />
     <Compile Include="DToS\EmpleadoDToS\RegistrarEmpleadoDTO.cs" />
-    <Compile Include="Interfaces\IAdministradorRepository.cs" />
     <Compile Include="Interfaces\ICargoEmpleadoRepository.cs" />
     <Compile Include="Interfaces\IEmpleadoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
