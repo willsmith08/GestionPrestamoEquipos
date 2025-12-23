@@ -8,6 +8,12 @@ namespace GestionPrestamoEquipos.Domain.Entities
 {
     internal class Devolucion
     {
+
+        public Devolucion() { }
+        public Devolucion(int idPrestamo) { 
+            this.idPrestamo = idPrestamo; 
+        }
+
         public int idDevolucion {  get; private set; }
 
         public int idPrestamo { get; private set; }

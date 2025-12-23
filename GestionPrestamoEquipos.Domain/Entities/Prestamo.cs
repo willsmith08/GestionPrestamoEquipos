@@ -8,6 +8,11 @@ namespace GestionPrestamoEquipos.Domain.Entities
 {
     public class Prestamo
     {
+        public Prestamo(int idPrestamo)
+        {
+            this.idPrestamo = idPrestamo;
+        }
+        public Prestamo() { }
         public int idPrestamo {  get; private set; }
 
         public int idEmpleado { get; private set; }
