@@ -22,7 +22,14 @@ namespace GestionPrestamoEquipos.Application.Services.EmpleadoService
         {
             List<MostrarEmpleadoDTO> listaEmpleados = new List<MostrarEmpleadoDTO>();
 
-            foreach (Empleado empl in _empleadoRepository.ListarEmpleados(busqueda))
+            List<Empleado> empleados = _empleadoRepository.ListarEmpleados(busqueda);
+
+            if (!empleados.Any())
+            {
+                return listaEmpleados;
+            }
+
+            foreach (Empleado empl in empleados)
             {
                 listaEmpleados.Add(
                     new MostrarEmpleadoDTO
