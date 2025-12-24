@@ -14,5 +14,7 @@ namespace GestionPrestamoEquipos.Application.Interfaces
         void Eliminar(Equipo equipo);
 
         List<Equipo> listarEquipos();
+
+        bool ExisteSerial(string serial);
     }
 }
