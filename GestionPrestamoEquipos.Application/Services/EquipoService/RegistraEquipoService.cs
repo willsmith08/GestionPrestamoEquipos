@@ -31,7 +31,7 @@ namespace GestionPrestamoEquipos.Application.Services.EquipoService
                 throw new Exception("Debe actualizar almenos un campo");
             }
 
-
+            
 
         }
     }
