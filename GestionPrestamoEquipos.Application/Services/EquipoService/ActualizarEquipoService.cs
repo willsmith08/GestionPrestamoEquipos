@@ -1,29 +1,28 @@
-﻿using System;
+﻿using GestionPrestamoEquipos.Application.DToS.EquipoDToS;
+using GestionPrestamoEquipos.Application.Interfaces;
+using GestionPrestamoEquipos.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GestionPrestamoEquipos.Application.Interfaces;
-using GestionPrestamoEquipos.Application.DToS;
-using GestionPrestamoEquipos.Application.DToS.EquipoDToS;
-using GestionPrestamoEquipos.Domain.Entities;
 
 namespace GestionPrestamoEquipos.Application.Services.EquipoService
 {
-    internal class RegistraEquipoService
+    internal class ActualizarEquipoService
     {
+        private readonly IEstadoEquipoRepository _estadoEquipoRepository;
         private readonly IEquipoRepository _equipoRepository;
         private readonly ITipoEquipoRepository _tipoEquipoRepository;
-        private readonly IEstadoEquipoRepository _estadoEquipoRepository;
 
-        public RegistraEquipoService(IEquipoRepository equipoRepository, ITipoEquipoRepository tipoEquipoRepository, IEstadoEquipoRepository estadoEquipoRepository)
+        public ActualizarEquipoService(IEstadoEquipoRepository estadoEquipoRepository, IEquipoRepository equipoRepository, ITipoEquipoRepository tipoEquipoRepository)
         {
+            _estadoEquipoRepository = estadoEquipoRepository;
             _equipoRepository = equipoRepository;
             _tipoEquipoRepository = tipoEquipoRepository;
-            _estadoEquipoRepository = estadoEquipoRepository;
         }
 
-        public void Ejecutar(RegistrarEquipoDToS equipoDTO)
+        public void Ejecutar(ActualizarEquipoDTO equipoDTO)
         {
             if (
                 string.IsNullOrWhiteSpace(equipoDTO.descripcion) ||
@@ -34,10 +33,7 @@ namespace GestionPrestamoEquipos.Application.Services.EquipoService
                 throw new Exception("Debe actualizar almenos un campo");
             }
 
-<<<<<<< HEAD
-            
-=======
-            if ( equipoDTO.idEstado == 0)
+            if (equipoDTO.idEstado == 0)
             {
                 throw new Exception("Seleccione el estado en el que se encuentra el equipo");
             }
@@ -65,16 +61,20 @@ namespace GestionPrestamoEquipos.Application.Services.EquipoService
                 throw new Exception("Ya existe un equipo registrado con este numero de serie");
             }
 
-            Equipo equipo = new Equipo();
+            Equipo equipoBuscado = _equipoRepository.EquipoEspecifico(equipoDTO.idEquipo);
+            if (equipoBuscado == null)
+            {
+                throw new Exception("Seleccione un equipo valido");
+            }
+
+            Equipo equipo = new Equipo(equipoBuscado.idEquipo);
+            equipo.cambiarEstadoEquipo(estadoEquipoBuscado);
             equipo.cambiardescripcion(equipoDTO.descripcion);
             equipo.cambiarNombreEquipo(equipoDTO.nombreEquipo);
-            equipo.cambiarEstadoEquipo(estadoEquipoBuscado);
             equipo.cambiarSerial(equipoDTO.serial);
             equipo.cambiarTipoEquipo(tipoEquipoBuscado);
 
-            _equipoRepository.Agregar(equipo);
-
->>>>>>> main
+            _equipoRepository.Actualizar(equipo);
 
         }
     }

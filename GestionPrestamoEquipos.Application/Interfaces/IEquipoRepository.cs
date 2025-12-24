@@ -16,5 +16,7 @@ namespace GestionPrestamoEquipos.Application.Interfaces
         List<Equipo> listarEquipos();
 
         bool ExisteSerial(string serial);
+
+        Equipo EquipoEspecifico(int idEquipo);
     }
 }

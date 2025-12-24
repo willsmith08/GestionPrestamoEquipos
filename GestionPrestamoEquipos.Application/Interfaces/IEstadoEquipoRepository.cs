@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestionPrestamoEquipos.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace GestionPrestamoEquipos.Application.Interfaces
 {
     internal interface IEstadoEquipoRepository
     {
+        EstadoEquipo EstadoEquipoEspecifico(int idEstado);
     }
 }
