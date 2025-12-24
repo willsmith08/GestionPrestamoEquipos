@@ -46,6 +46,7 @@
     <Compile Include="DToS\EmpleadoDToS\MostrarEmpleadoDTO.cs" />
     <Compile Include="DToS\CargoEmpleadoDTO.cs" />
     <Compile Include="DToS\EmpleadoDToS\RegistrarEmpleadoDTO.cs" />
+    <Compile Include="DToS\EquipoDToS\ActualizarEquipoDTO.cs" />
     <Compile Include="DToS\EquipoDToS\RegistrarEquipoDToS.cs" />
     <Compile Include="Interfaces\ICargoEmpleadoRepository.cs" />
     <Compile Include="Interfaces\IEmpleadoRepository.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Services\EnvioCorreosService\CorreoCodigoVerificacion.cs" />
     <Compile Include="Services\EnvioCorreosService\CorreoRegistroEmpleadoExitosoService.cs" />
     <Compile Include="Services\EmpleadoService\RegistrarEmpleadoService.cs" />
+    <Compile Include="Services\EquipoService\ActualizarEquipoService.cs" />
     <Compile Include="Services\EquipoService\RegistraEquipoService.cs" />
     <Compile Include="Session\UsuarioSession.cs" />
   </ItemGroup>
