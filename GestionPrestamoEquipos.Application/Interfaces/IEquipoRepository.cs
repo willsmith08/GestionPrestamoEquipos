@@ -13,10 +13,12 @@ namespace GestionPrestamoEquipos.Application.Interfaces
         void Actualizar(Equipo equipo);
         void Eliminar(Equipo equipo);
 
-        List<Equipo> listarEquipos();
+        List<Equipo> listarEquipos(string busqueda);
 
         bool ExisteSerial(string serial);
 
         Equipo EquipoEspecifico(int idEquipo);
+
+        bool VerificarEquipoPrestado(int idEquipo);
     }
 }

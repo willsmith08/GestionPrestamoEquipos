@@ -34,9 +34,6 @@ namespace GestionPrestamoEquipos.Application.Services.EquipoService
                 throw new Exception("Debe actualizar almenos un campo");
             }
 
-<<<<<<< HEAD
-            
-=======
             if ( equipoDTO.idEstado == 0)
             {
                 throw new Exception("Seleccione el estado en el que se encuentra el equipo");
@@ -74,7 +71,6 @@ namespace GestionPrestamoEquipos.Application.Services.EquipoService
 
             _equipoRepository.Agregar(equipo);
 
->>>>>>> main
 
         }
     }
