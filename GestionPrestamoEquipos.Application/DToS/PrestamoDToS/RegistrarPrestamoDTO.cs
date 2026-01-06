@@ -19,3 +19,4 @@ namespace GestionPrestamoEquipos.Application.DToS.PrestamoDToS
         public string observaciones { get; set; }
     }
 }
+    

@@ -38,7 +38,7 @@ namespace GestionPrestamoEquipos.Application.Services.EmpleadoService
                         documento = empl.documentoEmpleado,
                         gmail = empl.e_mail,
                         nombreEmpleado = empl.nombreEmpleado,
-                        nombreCargo = empl.CargosEmpleados.nombreCargo,
+                        nombreCargo = empl.CargoEmpleado.nombreCargo,
                     }
                 );
             }

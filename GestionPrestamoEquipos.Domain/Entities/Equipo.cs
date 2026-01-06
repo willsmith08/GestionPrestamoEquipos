@@ -8,21 +8,22 @@ namespace GestionPrestamoEquipos.Domain.Entities
 {
     public class Equipo
     {
-        public Equipo(int idEquipo)
-        {
-            this.idEquipo = idEquipo;
-        }
-        public Equipo() { }
         public int idEquipo { get; private set; }
+
         public string nombreEquipo { get; private set; }
+
         public string serial { get; private set; }
+
         public string descripcion { get; private set; }
 
         public int idEstado { get; private set; }
         public EstadoEquipo EstadoEquipo { get; private set; }
 
+
         public int idTipo { get; private set; }
-        public TipoEquipo TipoEquipos { get; private set; }
+        public TipoEquipo TipoEquipo { get; private set; }
+
+        public IReadOnlyCollection<Prestamo> prestamos;
 
         public void cambiarNombreEquipo(string nombreEquipo)
         {
@@ -49,28 +50,37 @@ namespace GestionPrestamoEquipos.Domain.Entities
             this.descripcion = descripcion.Trim();
         }
 
-        public void cambiarEstadoEquipo(EstadoEquipo estadoEquipo)
+        public void cambiarEstadoEquipo(int idEstadoEquipo)
         {
-            if (estadoEquipo == null)
+            if (idEstadoEquipo <= 0)
             {
-                throw new Exception("Seleccione un estado valido");
+                throw new Exception("Estado invalido");
             }
 
-            this.idEstado = estadoEquipo.idEstado;
-            this.EstadoEquipo = estadoEquipo;
+            this.idEstado = idEstadoEquipo;
         }
 
-        public void cambiarTipoEquipo(TipoEquipo tipoEquipos)
+        public void cambiarTipoEquipo(int idTipoEquipos)
         {
-            if (tipoEquipos == null)
+            if (idTipoEquipos <= 0)
             {
-                throw new Exception("Seleccione un tipo valido");
+                throw new Exception("Tipo de equipo invalido");
             }
 
-            this.TipoEquipos = tipoEquipos;
-            this.idTipo = tipoEquipos.idTipo;
+            this.idTipo = idTipoEquipos;
         }
 
-        public List<Prestamo> listaPrestamos {  get; private set; }
+        public Equipo(string nombre, string serial, string descripcion, int idEstado, int idTipo)
+        {
+            cambiarNombreEquipo(nombre);
+            cambiarSerial(serial);
+            cambiardescripcion(descripcion);
+            cambiarEstadoEquipo(idEstado);
+            cambiarTipoEquipo(idTipo);
+        }
+
+        protected Equipo() { }
+
+        
     }
 }
