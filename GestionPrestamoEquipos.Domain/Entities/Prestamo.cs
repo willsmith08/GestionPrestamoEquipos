@@ -1,81 +1,58 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace GestionPrestamoEquipos.Domain.Entities
 {
     public class Prestamo
     {
-        public Prestamo(int idPrestamo)
-        {
-            this.idPrestamo = idPrestamo;
-        }
-        public Prestamo() { }
-        public int idPrestamo {  get; private set; }
+        public int idPrestamo { get; private set; }
 
         public int idEmpleado { get; private set; }
         public Empleado Empleado { get; private set; }
-
         public int idEquipo { get; private set; }
         public Equipo Equipo { get; private set; }
-
         public DateTime fechaPrestamo { get; private set; }
         public DateTime fechaEstimadaDevolucion {  get; private set; }
+        public DateTime? fechaDevolucion { get; private set; }
         public string observaciones {  get; private set; }
 
-        public void cambiarEmpleado(Empleado empleado)
+        public void cambiarEmpleado(int idEmpleado)
         {
-            if (empleado == null)
+            if (idEmpleado <= 0)
             {
                 throw new Exception("Empleado invalido");
             }
 
-            this.idEmpleado = empleado.idEmpleado;
-            this.Empleado = empleado;
+            this.idEmpleado = idEmpleado;
         }
-
-        public void cambiarEquipo(Equipo equipo)
+        public void cambiarEquipo(int idEquipo)
         {
-            if (equipo == null)
+            if (idEquipo <= 0)
             {
                 throw new Exception("Equipo invalido");
             }
 
-            this.idEquipo = equipo.idEquipo;
-            this.Equipo = equipo;
+            this.idEquipo = idEquipo;
         }
 
         public void cambiarFechaEstimadaDevolucion(DateTime fechaEstimadaDevolucion)
         {
-            DateTime fechaActual = DateTime.Now;
-            if (fechaEstimadaDevolucion == fechaActual)
+            if (fechaEstimadaDevolucion == null)
             {
-                if (fechaEstimadaDevolucion.TimeOfDay.TotalMinutes < fechaActual.TimeOfDay.TotalMinutes)
-                {
-                    throw new Exception("La fecha estimada de devolucion debe ser mayor al menos una hora a la actual");
-                }
-            }
-
-            if (fechaEstimadaDevolucion < fechaActual)
-            {
-                throw new Exception("La fecha estimada de devolucion debe ser mayor al menos una hora a la actual");
+                throw new Exception("Fecha invalida");
             }
 
             this.fechaEstimadaDevolucion = fechaEstimadaDevolucion;
         }
 
-        public void cambiarFechaDevolucion(DateTime fechaDevolucion)
-        {
-            if (fechaDevolucion < this.fechaPrestamo)
-            {
-                throw new Exception("La fecha de devolucion debe ser mayor a la fecha del prestamo");
-            }
-        }
-
         public void cambiarFechaPrestamo(DateTime fechaPrestamo)
         {
+            if (fechaPrestamo == null)
+            {
+                throw new Exception("Fecha invalida");
+            }
+
             this.fechaPrestamo = fechaPrestamo;
         }
 
@@ -88,5 +65,31 @@ namespace GestionPrestamoEquipos.Domain.Entities
 
             this.observaciones = observaciones;
         }
+
+        public void cambiarFechaDevolucion(DateTime fechaDevolucion)
+        {
+            if (fechaDevolucion == null)
+            {
+                throw new Exception("Fecha invalida");
+            }
+
+            this.fechaDevolucion = fechaDevolucion;
+        }
+
+        public Prestamo(int idEmpleado, int idEquipo, DateTime fechaPrestamo, DateTime fechaEstimadaDevolucion, string observaciones)
+        {
+            cambiarEmpleado(idEmpleado);
+            cambiarEquipo(idEquipo);
+            cambiarFechaPrestamo(fechaPrestamo);
+            cambiarFechaEstimadaDevolucion(fechaEstimadaDevolucion);
+            cambiarObservaciones(observaciones);
+        }
+
+        public Prestamo(DateTime fechaDevolucion)
+        {
+            cambiarFechaDevolucion(fechaDevolucion);
+        }
+
+        protected Prestamo() { }
     }
 }

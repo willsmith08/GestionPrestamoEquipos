@@ -44,16 +44,18 @@
     <Compile Include="DToS\EmpleadoDToS\EditarEmpleadoDTO.cs" />
     <Compile Include="DToS\EmpleadoDToS\EliminarEmpleadoDTO.cs" />
     <Compile Include="DToS\EmpleadoDToS\MostrarEmpleadoDTO.cs" />
-    <Compile Include="DToS\CargoEmpleadoDTO.cs" />
+    <Compile Include="DToS\CargoEmpleadoDToS\CargoEmpleadoDTO.cs" />
     <Compile Include="DToS\EmpleadoDToS\RegistrarEmpleadoDTO.cs" />
     <Compile Include="DToS\EquipoDToS\ActualizarEquipoDTO.cs" />
     <Compile Include="DToS\EquipoDToS\EliminarEquipoDTO.cs" />
     <Compile Include="DToS\EquipoDToS\ListarEquipoDTO.cs" />
     <Compile Include="DToS\EquipoDToS\RegistrarEquipoDToS.cs" />
+    <Compile Include="DToS\PrestamoDToS\RegistrarPrestamoDTO.cs" />
     <Compile Include="Interfaces\ICargoEmpleadoRepository.cs" />
     <Compile Include="Interfaces\IEmpleadoRepository.cs" />
     <Compile Include="Interfaces\IEquipoRepository.cs" />
     <Compile Include="Interfaces\IEstadoEquipoRepository.cs" />
+    <Compile Include="Interfaces\IPrestamoRepository.cs" />
     <Compile Include="Interfaces\ITipoEquipoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CargoService\ListarCargoEmpleadoService.cs" />
@@ -67,6 +69,7 @@
     <Compile Include="Services\EquipoService\EliminarEquipoService.cs" />
     <Compile Include="Services\EquipoService\ListarEquiposService.cs" />
     <Compile Include="Services\EquipoService\RegistraEquipoService.cs" />
+    <Compile Include="Services\PrestamoService\RegistrarPrestamoService.cs" />
     <Compile Include="Session\UsuarioSession.cs" />
   </ItemGroup>
   <ItemGroup />

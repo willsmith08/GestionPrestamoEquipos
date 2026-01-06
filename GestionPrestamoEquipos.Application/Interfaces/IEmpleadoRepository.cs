@@ -17,8 +17,8 @@ namespace GestionPrestamoEquipos.Application.Interfaces
 
         bool ExiteGmail(string gmailEmpleado);
         bool ExisteDocumento(int documento);
-        bool VericacionPrestamosPendientes(int idEmpleado);
-
+        bool VericacionPrestamosMora(int idEmpleado);
         Empleado EmpleadoEspecifico(int idEmpleadi);
+        Empleado EmpleadoEspecificoDoc(int documento);
     }
 }

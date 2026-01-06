@@ -3,38 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GestionPrestamoEquipos.Domain.Entities
 {
     public class CargoEmpleado
     {
-        public CargoEmpleado(int idCargoEmpleado)
-        {
-            this.idCargo = idCargoEmpleado;
-        }
-        public CargoEmpleado() { }
-
         public int idCargo { get; private set; }
         public string nombreCargo { get; private set; }
 
+        private IReadOnlyCollection<Empleado> empleados;
+        
         public CargoEmpleado(string nombreCargo)
         {
-            editarNombreCargo(nombreCargo);
+            cambiarNombreCargo(nombreCargo);
         }
 
-        private void editarNombreCargo(string nombreCargo)
+        protected CargoEmpleado() { }
+
+        private void cambiarNombreCargo(string nombreCargo)
         {
-            if (string.IsNullOrEmpty(nombreCargo))
-            {
-                throw new Exception("Nombre no puede estar vacio");
-            }
             if (string.IsNullOrWhiteSpace(nombreCargo))
             {
-                throw new Exception("Nombre no puede estar vacio");
+                throw new Exception("Nombre invalido");
             }
             this.nombreCargo = nombreCargo;
         }
 
-        public List<Empleado> Empleados { get; private set; }
+        
     }
 }

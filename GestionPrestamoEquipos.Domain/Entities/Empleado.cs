@@ -9,38 +9,37 @@ namespace GestionPrestamoEquipos.Domain.Entities
 {
     public class Empleado
     {
-
-        public Empleado(int idEmpleado)
-        {
-            this.idEmpleado = idEmpleado;
-        }
-        public Empleado() { }
-
         public int idEmpleado {  get; private set; }
         public string nombreEmpleado { get; private set; }
+
         public int documentoEmpleado { get; private set; }
+
         public string e_mail { get; private set; }
+
         public bool activo {  get; private set; }
 
         public int idCargo { get; private set; }
-        public CargoEmpleado CargosEmpleados { get; private set; }
+        public CargoEmpleado cargoEmpleado { get; private set; }
 
-        public void cambiarCargo(CargoEmpleado cargo)
+        private IReadOnlyCollection<Prestamo> prestamos;
+
+        public Empleado(string nombreEmpleado, int documentoEmpleado, string e_mail, int idCargo)
         {
-            if (cargo == null)
-            {
-                throw new Exception("Seleccione un cargo valido");
-            }
-
-            this.idCargo = cargo.idCargo;
-            this.CargosEmpleados = cargo;
+            cambiarNombre(nombreEmpleado);
+            cambiarDocumentoEmpleado(documentoEmpleado);
+            cambiarE_mail(e_mail);
+            cambiarActivo(true);
+            cambiarCargo(idCargo);
         }
+
+        protected Empleado() { }
+
 
         public void cambiarNombre(string nombre)
         {
             if (string.IsNullOrWhiteSpace(nombre))
             {
-                throw new Exception("El nombre del empleado no puede estar vacio");
+                throw new Exception("Nombre invalido");
             }
 
             this.nombreEmpleado = nombre;
@@ -60,7 +59,7 @@ namespace GestionPrestamoEquipos.Domain.Entities
         {
             if (string.IsNullOrWhiteSpace(e_mail))
             {
-                throw new Exception("El gmail del empleado no puede estar vacio");
+                throw new Exception("Gmail invalido");
             }
 
             if (!Regex.IsMatch(e_mail, "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"))
@@ -76,6 +75,16 @@ namespace GestionPrestamoEquipos.Domain.Entities
             this.activo = activo;
         }
 
-        public List<Prestamo> listaPrestamos {  get; private set; }
+        public void cambiarCargo(int idCargo)
+        {
+            if (idCargo <= 0)
+            {
+                throw new Exception("Cargo invalido");
+            }
+
+            this.idCargo = idCargo;
+        }
+
+
     }
 }

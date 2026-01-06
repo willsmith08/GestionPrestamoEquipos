@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GestionPrestamoEquipos.Application.Interfaces
 {
-    internal interface IEquipoRepository
+    public interface IEquipoRepository
     {
         void Agregar(Equipo equipo);
         void Actualizar(Equipo equipo);
