@@ -61,12 +61,14 @@ namespace GestionPrestamoEquipos.Application.Services.PrestamoService
                 throw new Exception("La fecha de devolucion no puede ser menor a la de prestamo");
             }
 
-            Prestamo prestamo = new Prestamo();
-            prestamo.cambiarFechaPrestamo(prestamoDTO.fechaPrestamo);
-            prestamo.cambiarFechaDevolucion(prestamoDTO.fechaEstimadaDevolucion);
-            prestamo.cambiarEquipo(equipoBuscado);
-            prestamo.cambiarEmpleado(empleadoBUscado);
-            prestamo.cambiarObservaciones(prestamoDTO.observaciones);
+            Prestamo prestamo = new Prestamo
+            (
+                empleadoBUscado.idEmpleado, 
+                equipoBuscado.idEquipo, 
+                prestamoDTO.fechaPrestamo, 
+                prestamoDTO.fechaEstimadaDevolucion, 
+                prestamoDTO.observaciones
+            );
 
             _prestamoRepository.Agregar(prestamo);
 

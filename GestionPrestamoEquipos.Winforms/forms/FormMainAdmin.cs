@@ -16,6 +16,7 @@ namespace GestionPrestamosEquipos.Forms
         public FormMainAdmin()
         {
             InitializeComponent();
+            CargarControles(new PrestamosControl());
         }
 
         public void CargarControles(UserControl uc)
