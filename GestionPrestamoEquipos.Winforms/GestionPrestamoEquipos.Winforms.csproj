@@ -46,14 +46,107 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormMain.cs">
+    <Compile Include="controllerusers\DevolucionesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controllerusers\DevolucionesControl.Designer.cs">
+      <DependentUpon>DevolucionesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controllerusers\EmpleadosControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controllerusers\EmpleadosControl.Designer.cs">
+      <DependentUpon>EmpleadosControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controllerusers\empleados_reg_edit\EmpleadoEditControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controllerusers\empleados_reg_edit\EmpleadoEditControl.Designer.cs">
+      <DependentUpon>EmpleadoEditControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controllerusers\empleados_reg_edit\EmpleadoRegControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controllerusers\empleados_reg_edit\EmpleadoRegControl.Designer.cs">
+      <DependentUpon>EmpleadoRegControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controllerusers\EquiposControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controllerusers\EquiposControl.Designer.cs">
+      <DependentUpon>EquiposControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controllerusers\PrestamosControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controllerusers\PrestamosControl.Designer.cs">
+      <DependentUpon>PrestamosControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controllerusers\prestamos_moraDtGV_reg\DtGVEmpleadosMoraControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controllerusers\prestamos_moraDtGV_reg\DtGVEmpleadosMoraControl.Designer.cs">
+      <DependentUpon>DtGVEmpleadosMoraControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controllerusers\prestamos_moraDtGV_reg\DtGVHistorialControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controllerusers\prestamos_moraDtGV_reg\DtGVHistorialControl.Designer.cs">
+      <DependentUpon>DtGVHistorialControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controllerusers\prestamos_moraDtGV_reg\RegistroPrestamoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controllerusers\prestamos_moraDtGV_reg\RegistroPrestamoControl.Designer.cs">
+      <DependentUpon>RegistroPrestamoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FormMainAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMain.Designer.cs">
-      <DependentUpon>FormMain.cs</DependentUpon>
+    <Compile Include="forms\FormMainAdmin.Designer.cs">
+      <DependentUpon>FormMainAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FormValidarCodigo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormValidarCodigo.Designer.cs">
+      <DependentUpon>FormValidarCodigo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="controllerusers\DevolucionesControl.resx">
+      <DependentUpon>DevolucionesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controllerusers\EmpleadosControl.resx">
+      <DependentUpon>EmpleadosControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controllerusers\empleados_reg_edit\EmpleadoEditControl.resx">
+      <DependentUpon>EmpleadoEditControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controllerusers\empleados_reg_edit\EmpleadoRegControl.resx">
+      <DependentUpon>EmpleadoRegControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controllerusers\EquiposControl.resx">
+      <DependentUpon>EquiposControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controllerusers\PrestamosControl.resx">
+      <DependentUpon>PrestamosControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controllerusers\prestamos_moraDtGV_reg\DtGVEmpleadosMoraControl.resx">
+      <DependentUpon>DtGVEmpleadosMoraControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controllerusers\prestamos_moraDtGV_reg\DtGVHistorialControl.resx">
+      <DependentUpon>DtGVHistorialControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controllerusers\prestamos_moraDtGV_reg\RegistroPrestamoControl.resx">
+      <DependentUpon>RegistroPrestamoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormMainAdmin.resx">
+      <DependentUpon>FormMainAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormValidarCodigo.resx">
+      <DependentUpon>FormValidarCodigo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,6 +168,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="imgs\flechaHaciaDerecha.png" />
+    <Content Include="imgs\imgAdmin1.png" />
+    <Content Include="imgs\imgAdmin2.png" />
+    <Content Include="imgs\imgReloj.png" />
+    <Content Include="imgs\signoMas.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
