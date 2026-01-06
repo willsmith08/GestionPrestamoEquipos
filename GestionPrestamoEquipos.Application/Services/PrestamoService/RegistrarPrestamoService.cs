@@ -29,19 +29,28 @@ namespace GestionPrestamoEquipos.Application.Services.PrestamoService
                 throw new Exception("El campo de observaciones no puede estar vacio");
             }
 
-            Empleado empleadoBUscado = _empleadoRepository.EmpleadoEspecifico(prestamoDTO.idEmpleado);
+            Empleado empleadoBUscado = _empleadoRepository.EmpleadoEspecificoDoc(prestamoDTO.documento);
             Equipo equipoBuscado = _equipoRepository.EquipoEspecifico(prestamoDTO.idEquipo);
 
             if (equipoBuscado == null)
             {
                 throw new Exception("Seleccione un equipo valido");
             }
+            if (_equipoRepository.VerificarEquipoPrestado(equipoBuscado.idEquipo))
+            {
+                throw new Exception("El equipo seleccionado ya se encuentra prestado");
+            }
+
+
             if (empleadoBUscado == null)
             {
                 throw new Exception("Seleccione un empleado valido");
             }
+            if (_empleadoRepository.VericacionPrestamosMora(empleadoBUscado.idEmpleado))
+            {
+                throw new Exception("El empleado tiene prestamos en mora");
+            }
 
-            
 
             if (DateTime.Compare(prestamoDTO.fechaPrestamo, prestamoDTO.fechaEstimadaDevolucion) == 0)
             {

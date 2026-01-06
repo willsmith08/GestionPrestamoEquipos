@@ -9,7 +9,7 @@ namespace GestionPrestamoEquipos.Application.DToS.PrestamoDToS
 {
     public class RegistrarPrestamoDTO
     {
-        public int idEmpleado { get; set; }
+        public int documento { get; set; }
         public int idEquipo { get; set; }
 
         public DateTime fechaPrestamo { get; set; }
