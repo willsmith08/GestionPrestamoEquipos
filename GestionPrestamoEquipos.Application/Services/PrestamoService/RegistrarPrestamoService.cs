@@ -63,10 +63,10 @@ namespace GestionPrestamoEquipos.Application.Services.PrestamoService
 
             Prestamo prestamo = new Prestamo
             (
-                empleadoBUscado.idEmpleado, 
-                equipoBuscado.idEquipo, 
-                prestamoDTO.fechaPrestamo, 
-                prestamoDTO.fechaEstimadaDevolucion, 
+                empleadoBUscado.idEmpleado,
+                equipoBuscado.idEquipo,
+                prestamoDTO.fechaPrestamo,
+                prestamoDTO.fechaEstimadaDevolucion,
                 prestamoDTO.observaciones
             );
 

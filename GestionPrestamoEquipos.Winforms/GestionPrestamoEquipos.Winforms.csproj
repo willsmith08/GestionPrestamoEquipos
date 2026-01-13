@@ -100,6 +100,12 @@
     <Compile Include="controllerusers\prestamos_moraDtGV_reg\RegistroPrestamoControl.Designer.cs">
       <DependentUpon>RegistroPrestamoControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\FormInicioSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormInicioSesion.Designer.cs">
+      <DependentUpon>FormInicioSesion.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\FormMainAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="controllerusers\prestamos_moraDtGV_reg\RegistroPrestamoControl.resx">
       <DependentUpon>RegistroPrestamoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormInicioSesion.resx">
+      <DependentUpon>FormInicioSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\FormMainAdmin.resx">
       <DependentUpon>FormMainAdmin.cs</DependentUpon>

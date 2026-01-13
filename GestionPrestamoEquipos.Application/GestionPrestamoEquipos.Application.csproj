@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DToS\EmpleadoDToS\EditarEmpleadoDTO.cs" />
     <Compile Include="DToS\EmpleadoDToS\EliminarEmpleadoDTO.cs" />
+    <Compile Include="DToS\EmpleadoDToS\InicioSesionEmpleadoDTO.cs" />
     <Compile Include="DToS\EmpleadoDToS\MostrarEmpleadoDTO.cs" />
     <Compile Include="DToS\CargoEmpleadoDToS\CargoEmpleadoDTO.cs" />
     <Compile Include="DToS\EmpleadoDToS\RegistrarEmpleadoDTO.cs" />

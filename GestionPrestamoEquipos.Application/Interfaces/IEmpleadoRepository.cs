@@ -20,5 +20,8 @@ namespace GestionPrestamoEquipos.Application.Interfaces
         bool VericacionPrestamosMora(int idEmpleado);
         Empleado EmpleadoEspecifico(int idEmpleadi);
         Empleado EmpleadoEspecificoDoc(int documento);
+        Empleado EmpleadoEspecificoGmail(string gmail);
+
+        bool VerificarSesion(Empleado empleado);
     }
 }

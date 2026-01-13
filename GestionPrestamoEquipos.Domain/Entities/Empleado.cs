@@ -15,7 +15,7 @@ namespace GestionPrestamoEquipos.Domain.Entities
         public int documentoEmpleado { get; private set; }
 
         public string e_mail { get; private set; }
-
+        public string contrasena { get; private set; }
         public bool activo {  get; private set; }
 
         public int idCargo { get; private set; }
@@ -23,13 +23,20 @@ namespace GestionPrestamoEquipos.Domain.Entities
 
         private IReadOnlyCollection<Prestamo> prestamos;
 
-        public Empleado(string nombreEmpleado, int documentoEmpleado, string e_mail, int idCargo)
+        public Empleado(string nombreEmpleado, int documentoEmpleado, string e_mail, string contrasena, int idCargo)
         {
             cambiarNombre(nombreEmpleado);
             cambiarDocumentoEmpleado(documentoEmpleado);
             cambiarE_mail(e_mail);
+            cambiarContasena(contrasena);
             cambiarActivo(true);
             cambiarCargo(idCargo);
+        }
+
+        public Empleado(string contrasena, string e_mail)
+        {
+            cambiarContasena(contrasena);
+            cambiarE_mail(e_mail);
         }
 
         protected Empleado() { }
@@ -44,7 +51,15 @@ namespace GestionPrestamoEquipos.Domain.Entities
 
             this.nombreEmpleado = nombre;
         }
+        public void cambiarContasena(string contrasena)
+        {
+            if (string.IsNullOrWhiteSpace(contrasena))
+            {
+                throw new Exception("Nombre invalido");
+            }
 
+            this.contrasena = contrasena;
+        }
         public void cambiarDocumentoEmpleado(int documentoEmpleado)
         {
             if (documentoEmpleado <= 0)
